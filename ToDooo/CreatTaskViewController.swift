@@ -26,9 +26,13 @@ class CreatTaskViewController: UIViewController {
         
         //Creat Task from outlet information
         
+        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+
+        
         let task = Task()
         task.name = taskNameTextField.text!
         task.important = importantSwitch.isOn
+        (UIApplication.shared.delegate as! AppDelegate).saveContext()
         
         
         //Add new Task to Array in previous ViewController
